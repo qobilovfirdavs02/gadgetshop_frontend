@@ -19,7 +19,7 @@ const Cart = () => {
     try {
       for (const item of cart) {
         await axios.post(
-          'http://localhost:8000/orders/',
+          'https://web-production-5ea26.up.railway.app/orders/',
           { product_id: item.id, quantity: item.quantity },
           { headers: { Authorization: `Bearer ${token}` } }
         );

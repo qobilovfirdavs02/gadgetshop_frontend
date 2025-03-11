@@ -12,7 +12,7 @@ const Login = () => {
   const handleLogin = async () => {
     try {
       const response = await axios.post(
-        'http://localhost:8000/admin/login/',
+        'https://web-production-5ea26.up.railway.app/admin/login/',
         { username, password },
         { headers: { 'Content-Type': 'application/json' } }
       );

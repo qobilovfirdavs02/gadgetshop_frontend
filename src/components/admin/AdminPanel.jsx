@@ -30,18 +30,18 @@ const AdminPanel = () => {
   }, [navigate, isAuthenticated]);
 
   const fetchProducts = async () => {
-    const response = await axios.get('http://localhost:8000/products/');
+    const response = await axios.get('https://web-production-5ea26.up.railway.app/products/');
     console.log("Products:", response.data);
     setProducts(response.data);
   };
 
   const fetchCategories = async () => {
-    const response = await axios.get('http://localhost:8000/categories/');
+    const response = await axios.get('https://web-production-5ea26.up.railway.app/categories/');
     setCategories(response.data);
   };
 
   const fetchOrders = async () => {
-    const response = await axios.get('http://localhost:8000/admin/orders/');
+    const response = await axios.get('https://web-production-5ea26.up.railway.app/admin/orders/');
     setOrders(response.data);
   };
 
@@ -75,10 +75,10 @@ const AdminPanel = () => {
     
     try {
       if (editingId) {
-        await axios.put(`http://localhost:8000/products/${editingId}`, productData);
+        await axios.put(`https://web-production-5ea26.up.railway.app/products/${editingId}`, productData);
         alert('Mahsulot tahrirlandi');
       } else {
-        await axios.post('http://localhost:8000/products/', productData);
+        await axios.post('https://web-production-5ea26.up.railway.app/products/', productData);
         alert('Mahsulot qo‘shildi');
       }
       resetForm();
@@ -104,7 +104,7 @@ const AdminPanel = () => {
 
   const handleDelete = async (productId) => {
     try {
-      await axios.delete(`http://localhost:8000/products/${productId}`);
+      await axios.delete(`https://web-production-5ea26.up.railway.app/products/${productId}`);
       alert('Mahsulot o‘chirildi');
       fetchProducts();
     } catch (err) {
@@ -119,7 +119,7 @@ const AdminPanel = () => {
         return;
       }
       await axios.put(
-        `http://localhost:8000/admin/orders/${orderId}`,
+        `https://web-production-5ea26.up.railway.app/admin/orders/${orderId}`,
         { status, cancel_reason: status === "cancelled" ? cancelReason : null }
       );
       setCancelReason('');

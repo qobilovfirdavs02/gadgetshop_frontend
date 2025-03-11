@@ -18,12 +18,12 @@ const ProductList = () => {
   }, []);
 
   const fetchCategories = async () => {
-    const response = await axios.get('http://localhost:8000/categories/');
+    const response = await axios.get('https://web-production-5ea26.up.railway.app/categories/');
     setCategories(response.data);
   };
 
   const fetchProducts = async () => {
-    const response = await axios.get('http://localhost:8000/products/');
+    const response = await axios.get('https://web-production-5ea26.up.railway.app/products/');
     setProducts(response.data);
   };
 
