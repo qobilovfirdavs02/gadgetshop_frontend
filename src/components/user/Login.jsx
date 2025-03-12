@@ -14,7 +14,7 @@ const UserLogin = () => {
       const payload = { username, password };
       console.log('Yuborilayotgan ma’lumotlar:', payload); // Tekshirish uchun
       const response = await axios.post(
-        'http://localhost:8000/users/login/',
+        'https://web-production-5ea26.up.railway.app/users/login/',
         payload,
         { headers: { 'Content-Type': 'application/json' } }
       );

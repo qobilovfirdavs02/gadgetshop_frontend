@@ -13,7 +13,7 @@ const UserRegister = () => {
   const handleRegister = async () => {
     try {
       await axios.post(
-        'http://localhost:8000/users/register/',
+        'https://web-production-5ea26.up.railway.app/users/register/',
         { username, email, password },
         { headers: { 'Content-Type': 'application/json' } }
       );

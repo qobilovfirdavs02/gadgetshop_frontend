@@ -17,10 +17,10 @@ const UserProfile = () => {
         return;
       }
       try {
-        const userResponse = await axios.get('http://localhost:8000/users/me/', {
+        const userResponse = await axios.get('https://web-production-5ea26.up.railway.app/users/me/', {
           headers: { Authorization: `Bearer ${token}` },
         });
-        const ordersResponse = await axios.get('http://localhost:8000/orders/', {
+        const ordersResponse = await axios.get('https://web-production-5ea26.up.railway.app/orders/', {
           headers: { Authorization: `Bearer ${token}` },
         });
         setUser(userResponse.data);
@@ -36,7 +36,7 @@ const UserProfile = () => {
   const handleCancelOrder = async (orderId) => {
     try {
       await axios.put(
-        `http://localhost:8000/orders/${orderId}`,
+        `https://web-production-5ea26.up.railway.app/orders/${orderId}`,
         { status: "cancelled", cancel_reason: cancelReason || null },
         { headers: { Authorization: `Bearer ${token}` } }
       );
